@@ -19,7 +19,7 @@ class RGBTests: QuickSpec {
         
         describe("RGBUIColor") {
             it("is a correct representation of the values") {
-                let thoughtbotRed = UIColor(
+                let beautifulRed = UIColor(
                     red: CGFloat(195/255),
                     green: CGFloat(47/255),
                     blue: CGFloat(52/255),
@@ -27,7 +27,7 @@ class RGBTests: QuickSpec {
                 )
                 let color = RGBUIColor(red: 195, green: 47, blue: 52)
 
-                expect(color).to(equal(thoughtbotRed))
+                expect(color).to(equal(beautifulRed))
             }
         }
     }
