@@ -5,29 +5,30 @@
 //  Created by 白岚花 on 2021/4/9.
 //
 
-import XCTest
-@testable import RGB
+import Quick
+import Nimble
+import RGB
 
-class RGBTests: XCTestCase {
+class RGBTests: QuickSpec {
+    override func spec() {
+        describe("RGB") {
+            it("works") {
+                expect(true).to(beTrue())
+            }
+        }
+        
+        describe("RGBUIColor") {
+            it("is a correct representation of the values") {
+                let thoughtbotRed = UIColor(
+                    red: CGFloat(195/255),
+                    green: CGFloat(47/255),
+                    blue: CGFloat(52/255),
+                    alpha: 1
+                )
+                let color = RGBUIColor(red: 195, green: 47, blue: 52)
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+                expect(color).to(equal(thoughtbotRed))
+            }
         }
     }
-
 }
